@@ -34,3 +34,5 @@ This project is a simple Hangman game built using Streamlit, a popular framework
 Acknowledgements
 Streamlit for providing a powerful and easy-to-use framework for creating interactive web apps.
 ASCII art resources for the hangman figure.
+
+Made by [Adarsh-asokan-00](https://github.com/Adarsh-asokan-00)
