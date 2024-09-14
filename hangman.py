@@ -156,6 +156,7 @@ def game():
         st.text(display_hangman(tries))
     with col1:
         st.header(f"Word: {word_completion}")
+        st.write(f"length of word = {len(word)}")
         st.write(f'Tries remaining: {tries}')
 
     # Provide hint if needed
