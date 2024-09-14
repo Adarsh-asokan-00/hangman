@@ -12,23 +12,23 @@ This project is a simple Hangman game built using Streamlit, a popular framework
 - Letter and full-word guessing functionality
 - Game state management with feedback and try tracking
 - Option to play the game again
-
 ## Code Explanation
 
-- **`count_letters(word)`**: Computes the frequency of each letter in the given word and returns a dictionary with letters as keys and their counts as values.
+- **`count_letters(word)`**: Uses `Counter` from the `collections` module to count the occurrences of each letter in the given word and returns a dictionary with these counts.
 
-- **`display_hangman(tries)`**: Provides an ASCII art representation of the hangman figure based on the number of remaining tries. This function helps visualize the game's progress and the player's current status.
+- **`display_hangman(tries)`**: Returns an ASCII representation of the hangman figure based on the number of remaining tries, which visually represents the current state of the game.
 
-- **`get_word()`**: Randomly selects a word from the predefined `word_list`. This function ensures that each game starts with a new and randomly chosen word.
+- **`get_word()`**: Selects a random word from the predefined `word_list` and returns it for the game.
 
-- **`reset_game()`**: Resets the game state to initialize a new game. It selects a new word, resets the word completion display, clears guessed letters and words, and sets the number of tries to the initial value.
+- **`get_hint(word, word_completion)`**: Provides a hint by revealing one letter of the word if a certain number of incorrect guesses have been made, helping players progress in the game.
 
-- **`process_letter_guess(guess, word)`**: Processes a guess where the player guesses a single letter. Updates the display of the word in progress based on whether the guess is correct or not and adjusts the number of remaining tries.
+- **`reset_game()`**: Resets the game state to start a new round, initializing variables such as the word to guess, the current state of the word, the number of tries, and tracking guesses.
 
-- **`process_word_guess(guess, word)`**: Handles a full word guess from the player. It checks if the guessed word matches the selected word, updates the game state accordingly, and adjusts the number of remaining tries if the guess is incorrect.
+- **`process_letter_guess(guess, word)`**: Processes a single letter guess, updating the game state based on whether the guess is correct or not, and adjusts the number of remaining tries accordingly.
 
-- **`game()`**: Manages the main game loop, including displaying the hangman figure, the word progress, and remaining tries. It handles user input for letter and word guesses, processes those guesses, and provides feedback. This function also manages game state and allows players to restart the game.
+- **`process_word_guess(guess, word)`**: Handles guesses where the player attempts to guess the entire word, checking for correctness and updating the game state if the guess is correct or incorrect.
 
+- **`game()`**: The main function that manages the flow of the game, including displaying the hangman figure, handling user inputs, providing hints, and determining the end of the game.
 
 
 Acknowledgements
